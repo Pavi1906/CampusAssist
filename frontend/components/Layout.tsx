@@ -33,21 +33,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="hidden md:block text-sm text-blue-100">
                   {user.email}
                 </div>
-                <div className="relative group">
-                  <button className="flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-md transition-colors text-sm font-medium">
-                    <UserIcon className="h-4 w-4" />
-                    <span>Hi, {isOfficer ? 'Admin' : 'Student'}</span>
-                  </button>
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl py-1 hidden group-hover:block border border-slate-100">
-                    <button 
-                      onClick={handleLogout}
-                      className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-slate-50"
-                    >
-                      <LogOut className="h-4 w-4 mr-2" />
-                      Sign out
-                    </button>
-                  </div>
+                
+                <div className="flex items-center space-x-2 bg-blue-700 px-3 py-2 rounded-md transition-colors text-sm font-medium">
+                  <UserIcon className="h-4 w-4" />
+                  <span>{isOfficer ? 'Admin' : 'Student'}</span>
                 </div>
+
+                <button 
+                  onClick={handleLogout}
+                  className="flex items-center space-x-2 bg-red-600 hover:bg-red-700 px-3 py-2 rounded-md text-sm font-medium transition-colors shadow-md border border-red-500"
+                >
+                  <LogOut className="h-4 w-4" />
+                  <span>Logout</span>
+                </button>
               </div>
             )}
           </div>
